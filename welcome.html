@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Font Awesome CDN for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="welcome style.css">
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: rgb(157, 161, 162);
+        }
+    </style>
+    <style>
+        h1 {
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+    <h1>WELCOME TO OUR WEBSITE</h1>
+    <!-- Skip button with unique id -->
+    <button class="btn white-btn" id ="skipBtn"></button>
+
+    <div class="container">
+        <div class="slide">
+            <div class="item" style="background-image:url(journal.jpg);">
+                <div class="content">
+                    <div class="name">Journal Articles</div>
+                    <div class="des">A journal is a collection of articles that is published regularly throughout the
+                        year. Journals present the most recent research. They may be published in print or online
+                        formats, or both. </div>
+                    <button>See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image:url(magazines.webp);">
+                <div class="content">
+                    <div class="name">Magazine Articles</div>
+                    <div class="des">Magazines have been a popular form of media in India for decades, offering readers
+                        a unique of interests and passions, from business and current affairs to fashion and lifestyle.
+                    </div>
+                    <button>See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(news.jpg);">
+                <div class="content">
+                    <div class="name">News Articles</div>
+                    <div class="des">A news article is a written report of any recent event or an issue of the reader
+                        interest. It usually informs the reader by answering necessary questions in an easy-to-digest
+                        format.</div>
+                    <button>See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(travel.avif);">
+                <div class="content">
+                    <div class="name">Travel Articles</div>
+                    <div class="des">A travel article purpose is primarily to provide information to readers. This can
+                        come in the form of researched facts or a description of the writers own experiences The travel
+                        industry is hurting. So are travelers. “I dwelled so much on my disappointment that it almost
+                        physically hurt</div>
+                    <button>See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(research.jpg);">
+                <div class="content">
+                    <div class="name">Research Articles</div>
+                    <div class="des">A research article is a written paper that illustrates an outcome of scientific
+                        research with supporting clinical data and Research articles represent the ultimate, final
+                        product of a scientific study. A published paper shows that you have completed a research
+                        project, from beginning to end, and the peer-reviewed results are indefinitely available for
+                        anyone in the world to access.</div>
+                    <button>See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(personal.jpeg);">
+                <div class="content">
+                    <div class="name">Personal Articles</div>
+                    <div class="des">Personal article provides coverage for personal belongings owned by the While
+                        personal articles insurance provides a known as exclusions. An exclusion is a peril for which
+                        your insured items are not covered. policyholder that are not included under other.</div>
+                    <button>See More</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="button">
+            <button class="prev"><i class="fas fa-arrow-left"></i></button>
+            <button class="next"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <!-- Logo or content could go here -->
+            </div>
+            <div class="nav-button">
+                <!-- The button to trigger login or skip -->
+                <!-- No need to duplicate the skipBtn here, it's already defined above -->
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        // Handling the carousel navigation
+        let next = document.querySelector('.next');
+        let prev = document.querySelector('.prev');
+
+        next.addEventListener('click', function () {
+            let items = document.querySelectorAll('.item');
+            document.querySelector('.slide').appendChild(items[0]);  // Move first item to the end
+        });
+
+        prev.addEventListener('click', function () {
+            let items = document.querySelectorAll('.item');
+            document.querySelector('.slide').prepend(items[items.length - 1]);  // Move last item to the front
+        });
+
+        // Fix the skip button by targeting it specifically by its unique ID
+        document.getElementById("skipBtn").addEventListener("click", function (e) {
+            e.preventDefault();  // Prevent any default action (e.g., form submission)
+            window.location.replace('priya.html');  // Redirect to 'priya.html'
+        });
+    </script>
+</body>
+</html> 

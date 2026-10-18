@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="wordcount.css" />
+    <style>
+      /* Styling for buttons container */
+      .navigation-buttons {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+      }
+
+      /* Styling for individual buttons */
+      .navigation-buttons button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: hwb(258 4% 59%); /* Green background */
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .navigation-buttons button:hover {
+        background-color: #3857f0; /* Darker green on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <textarea
+          id="input-textarea"
+          rows="12"
+          placeholder="Start Typing here..."
+        ></textarea>
+      </div>
+      <div class="count">
+        <div>
+          <h5 id="word-count">0</h5>
+          <p>Words</p>
+        </div>
+        <div>
+          <h5 id="charac-count">0</h5>
+          <p>Characters</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="navigation-buttons">
+      <button onclick="goBack()">Back</button>
+      <button onclick="goNext()">Next</button>
+    </div>
+
+    <!-- Script -->
+    <script src="wordcount.js"></script>
+    <script>
+      // Function to go back to another page
+      function goBack() {
+        window.location.href = "main.html";  // Replace with the actual previous page URL
+      }
+
+      // Function to go to the next page
+      function goNext() {
+        window.location.href = "textspeech.html";  // Replace with the actual next page URL
+      }
+    </script>
+  </body>
+</html>
